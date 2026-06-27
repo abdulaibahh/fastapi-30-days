@@ -1,29 +1,29 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
-from typing import ClassVar, List
 
 app = FastAPI()
 
 
-#STUDENT MODEL
+# STUDENT MODEL
 class Student(BaseModel):
     name: str
     age: int
     course: str
 
 
-students: ClassVar[List[dict]] = []
+students: list[dict] = []
 
-#HOME ROUTE
+
+# HOME ROUTE
 @app.get("/")
 async def home():
     return {"message": "Day 5 - CRUD API"}
 
 
-#CREATE STUDENT
+# CREATE STUDENT
 @app.post("/students")
 async def create_student(student: Student):
-    student_data = student.dict()
+    student_data = student.model_dump()
 
     student_data["id"] = len(students) + 1
     students.append(student_data)
@@ -33,16 +33,16 @@ async def create_student(student: Student):
     }
 
 
-#GET ALL STUDENTS
+# GET ALL STUDENTS
 @app.get("/students")
 async def get_students():
     return {
-        "students":students
+        "students": students
         }
 
 
-#GET SINGLE STUDENT
-@app.get("/students/{students_id}")
+# GET SINGLE STUDENT
+@app.get("/students/{student_id}")
 async def get_student(student_id: int):
     for student in students:
         if student["id"] == student_id:
@@ -51,7 +51,7 @@ async def get_student(student_id: int):
     raise HTTPException(status_code=404, detail="Student not found")
 
 
-#UPDATE STUDENT
+# UPDATE STUDENT
 @app.put("/students/{student_id}")
 async def update_student(student_id: int, updated_student: Student):
 
@@ -69,7 +69,7 @@ async def update_student(student_id: int, updated_student: Student):
 
     raise HTTPException(status_code=404, detail="Student not found")
 
-#DELETE STUDENT
+# DELETE STUDENT
 @app.delete("/students/{student_id}")
 async def delete_student(student_id: int):
 
