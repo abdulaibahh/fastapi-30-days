@@ -36,10 +36,7 @@ day-06-task-manager-crud/
 ├── main.py
 ├── notes.md
 ├── requirements.txt
-├── README.md
-└── social/
-    ├── posting-captions.md
-    └── vlog-script.md
+└── README.md
 ```
 
 ## Run the API
