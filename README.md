@@ -43,16 +43,6 @@ git merge day-06
 git push origin main
 ```
 
-## Social Media Workflow
-
-Each day includes a social media package with:
-
-- Vlog script
-- Shot list
-- On-screen captions
-- Facebook caption for `Lafwol.Dev`
-- TikTok caption for `lafwol.dev`
-
 ## Tech Stack
 - Python
 - FastAPI

@@ -35,10 +35,7 @@ day-05-crud-api/
 ├── course.py
 ├── notes.md
 ├── requirements.txt
-├── README.md
-└── social/
-    ├── posting-captions.md
-    └── vlog-script.md
+└── README.md
 ```
 
 ## Run the Student API
@@ -131,7 +128,7 @@ git checkout main
 git pull origin main
 git checkout day-05
 git add .
-git commit -m "Day 5: Complete CRUD API with README and social vlog package"
+git commit -m "Day 5: Complete CRUD API"
 git push origin day-05
 git checkout main
 git merge day-05
