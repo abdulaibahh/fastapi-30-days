@@ -19,6 +19,7 @@ Each day contains:
 | Day 3 | Path and Query Parameters | ✅ Completed |
 | Day 4 | Request Body and Pydantic Models | ✅ Completed |
 | Day 5 | CRUD API | ✅ Completed |
+| Day 6 | Task Manager CRUD API | ✅ Completed |
 
 ## Branch Workflow
 
